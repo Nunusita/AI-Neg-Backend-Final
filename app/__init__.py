@@ -37,12 +37,12 @@ def create_app():
     # Importar modelos
     from .models import User, Video, Clip
     
-                    # Registrar blueprints
-                from .auth.routes import auth_bp
-                from .videos.video_routes import videos_bp
-                from .payments.routes import payments_bp
-                from .downloads.routes import downloads_bp
-                from .admin.routes import admin_bp
+    # Registrar blueprints
+    from .auth.routes import auth_bp
+    from .videos.video_routes import videos_bp
+    from .payments.routes import payments_bp
+    from .downloads.routes import downloads_bp
+    from .admin.routes import admin_bp
     
     app.register_blueprint(auth_bp, url_prefix='/auth')
     app.register_blueprint(videos_bp, url_prefix='/videos')

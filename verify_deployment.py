@@ -41,7 +41,7 @@ def main():
         'app/__init__.py',
         'app/models.py',
         'app/auth/routes.py',
-        'app/videos/routes.py',
+        'app/videos/video_routes.py',
         'app/payments/routes.py',
         'app/downloads/routes.py',
         'app/admin/routes.py'
