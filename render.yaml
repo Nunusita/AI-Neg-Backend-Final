@@ -1,0 +1,18 @@
+services:
+  - type: web
+    name: ai-net-backend
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt && chmod +x install-tools.sh && ./install-tools.sh
+    startCommand: gunicorn wsgi:app
+    envVars:
+      - key: SECRET_KEY
+        generateValue: true
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        value: sqlite:///app.db
+      - key: STRIPE_SECRET_KEY
+        value: sk_test_placeholder
+      - key: STRIPE_PUBLISHABLE_KEY
+        value: pk_test_placeholder 
