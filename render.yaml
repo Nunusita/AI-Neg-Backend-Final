@@ -3,7 +3,10 @@ services:
     name: ai-net-backend
     env: python
     plan: free
-    buildCommand: pip install -r requirements.txt && chmod +x install-tools.sh && ./install-tools.sh
+    buildCommand: |
+      pip install -r requirements.txt
+      chmod +x install-tools.sh
+      ./install-tools.sh
     startCommand: gunicorn wsgi:app
     envVars:
       - key: SECRET_KEY
